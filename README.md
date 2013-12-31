@@ -1,4 +1,4 @@
-# anthology [![Build Status](https://secure.travis-ci.org/dylang/anthology.png?branch=master)](http://travis-ci.org/dylang/anthology)
+# anthology [![Build Status](https://secure.travis-ci.org/dylang/anthology.png)](http://travis-ci.org/dylang/anthology)
 
 Find anthology node modules
 
@@ -7,7 +7,8 @@ Install the module with: `npm install anthology`
 
 ```javascript
 var anthology = require('anthology');
-anthology.awesome(); // "awesome"
+anthology.forUser(username, filter)  // returns promise
+  .then(data);
 ```
 
 ## Documentation
@@ -16,12 +17,9 @@ _(Coming soon)_
 ## Examples
 _(Coming soon)_
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
 ## Release History
-_(Nothing yet)_
+_Work in progress_
 
 ## License
-Copyright (c) 2013 Dylan Greene  
+Copyright (c) 2013-2014 Dylan Greene
 Licensed under the MIT license.
