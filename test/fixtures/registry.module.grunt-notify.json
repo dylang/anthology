@@ -1,0 +1,1378 @@
+{
+    "_id": "grunt-notify",
+    "_rev": "41-c69ca72fc68e63ca3891af8cf232efc5",
+    "name": "grunt-notify",
+    "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+    "dist-tags": {
+        "latest": "0.2.13"
+    },
+    "versions": {
+        "0.1.0": {
+            "name": "grunt-notify",
+            "description": "The best grunt plugin ever.",
+            "version": "0.1.0",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.1.0",
+                "grunt-contrib-clean": "~0.4.0a",
+                "grunt-contrib-nodeunit": "~0.1.0",
+                "grunt": "~0.4.0rc4"
+            },
+            "keywords": ["gruntplugin"],
+            "readme": "# grunt-notify\n\n> Automatic OSX Native Notifications when Grunt tasks fail.\n\nThis requires `Grunt 0.4`. It also requires `OSX 10.8.2` (Mountain Lion) but it won't cause errors in older OSX versions or other platforms. \n\n## Getting Started\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's Gruntfile:\n\n```js\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n## Automatic behavior\nBy including `grunt.loadNpmTasks('grunt-notify');` in your `Gruntfile.js` you will automatically get notifications when Grunt has warnings or errors!\n\n[![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)]\n\n## Configuring the automatic behavior\nThese are the defaults. Any can be changed.\n\n```js\ngrunt.initConfig({\n  notify_hooks: {\n    options: {\n        warnHookEnabled:        true,\n        errorHookEnabled:       true,\n\n        warnHookDefaultTitle:   'Grunt Warning',\n        warnHookDefaultMessage: 'Warning!', // used if the warning from Grunt is not available\n\n        errorHookDefaultTitle:   'Grunt Error',\n        errorHookDefaultMessage: 'Error!' // used if the error from Grunt is not available\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// Always run it anytime you use `grunt` it uses your `notify_hooks` options.\ngrunt.task.run('notify_hooks');\n```\n\n[![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)]\n\n## Arbitrary figuring Notification Messages\n\n### notify Muti-task\nLets say you want a notification `watch` detects a change or when uploading to `s3` is complete. That's very easy to do:\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n        subtitle: '' // optional, kinda a lot for a message\n      }\n    },\n    helloWorld: {\n      options: {\n        message: 'Hello world!'\n      }\n    }\n  },\n});\n\ngrunt.loadNpmTasks('grunt-notify');\ngrunt.registerTask('default', 'notify:helloWorld');\n```\n[![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)]\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n* `subtitle` (_optional_): Subtitle, I think it's a bit much.\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nTo use the native notification system OSX requires packages to be signed and compiled using their platform and tools. This is not very friendly for Node users so we are using the tiny signed native application [Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy). We're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.\n\n## Growl, Windows, etc\nWish there was fallback support for Growl and other systems? Post a pull request with updated docs and tests and I'll be happy to update it.\n\n## Doodle or Die\nThis project was created for and is used by [Doodle or Die](http://doodleOrDie.com). \n\n[![Doodle or Die example](https://github.com/dylang/grunt-notify/raw/master/screenshots/deploy.png)](http://doodleOrDie.com)\n\n## Release History\nDec 28 - First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.1.0",
+            "dist": {
+                "shasum": "3d6090febe8af07bc40a9c119ad70c1b49702387",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.1.0.tgz"
+            },
+            "_npmVersion": "1.1.70",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.1.1": {
+            "name": "grunt-notify",
+            "description": "Automatic OSX Native Notifications when Grunt tasks fail.",
+            "version": "0.1.1",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.1.0",
+                "grunt-contrib-clean": "~0.4.0a",
+                "grunt-contrib-nodeunit": "~0.1.0",
+                "grunt": "~0.4.0rc4"
+            },
+            "keywords": ["gruntplugin"],
+            "readme": "# grunt-notify\n\n> Automatic OSX Native Notifications when Grunt tasks fail.\n\nThis requires `Grunt 0.4`. It also requires `OSX 10.8.2` (Mountain Lion) but it won't cause errors in older OSX versions or other platforms. \n\n## Getting Started\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's Gruntfile:\n\n```js\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n## Automatic behavior\nBy including `grunt.loadNpmTasks('grunt-notify');` in your `Gruntfile.js` you will automatically get notifications when Grunt has warnings or errors!\n\n[![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)]\n\n## Configuring the automatic behavior\nThese are the defaults. Any can be changed.\n\n```js\ngrunt.initConfig({\n  notify_hooks: {\n    options: {\n        warnHookEnabled:        true,\n        errorHookEnabled:       true,\n\n        warnHookDefaultTitle:   'Grunt Warning',\n        warnHookDefaultMessage: 'Warning!', // used if the warning from Grunt is not available\n\n        errorHookDefaultTitle:   'Grunt Error',\n        errorHookDefaultMessage: 'Error!' // used if the error from Grunt is not available\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// Always run it anytime you use `grunt` it uses your `notify_hooks` options.\ngrunt.task.run('notify_hooks');\n```\n\n[![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)]\n\n## Arbitrary figuring Notification Messages\n\n### notify Muti-task\nLets say you want a notification `watch` detects a change or when uploading to `s3` is complete. That's very easy to do:\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n        subtitle: '' // optional, kinda a lot for a message\n      }\n    },\n    helloWorld: {\n      options: {\n        message: 'Hello world!'\n      }\n    }\n  },\n});\n\ngrunt.loadNpmTasks('grunt-notify');\ngrunt.registerTask('default', 'notify:helloWorld');\n```\n[![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)]\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n* `subtitle` (_optional_): Subtitle, I think it's a bit much.\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nTo use the native notification system OSX requires packages to be signed and compiled using their platform and tools. This is not very friendly for Node users so we are using the tiny signed native application [Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy). We're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.\n\n## Growl, Windows, etc\nWish there was fallback support for Growl and other systems? Post a pull request with updated docs and tests and I'll be happy to update it.\n\n## Doodle or Die\nThis project was created for and is used by [Doodle or Die](http://doodleOrDie.com). \n\n[![Doodle or Die example](https://github.com/dylang/grunt-notify/raw/master/screenshots/deploy.png)](http://doodleOrDie.com)\n\n## Release History\nDec 28 - First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.1.1",
+            "dist": {
+                "shasum": "b74d6ac0cb1c74680d9a6e7128113cd51fc1623d",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.1.1.tgz"
+            },
+            "_npmVersion": "1.1.70",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.1.2": {
+            "name": "grunt-notify",
+            "description": "Automatic OS X Native Notifications when Grunt tasks fail",
+            "version": "0.1.2",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.1.0",
+                "grunt-contrib-clean": "~0.4.0a",
+                "grunt-contrib-nodeunit": "~0.1.0",
+                "grunt": "~0.4.0rc4"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "osx", "os x"],
+            "readme": "# grunt-notify\n\n> Automatic OSX Native Notifications when Grunt tasks fail.\n\nThis requires `Grunt 0.4`. It also requires `OSX 10.8.2` (Mountain Lion) but it won't cause errors in older OSX versions or other platforms. \n\n## Getting Started\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's Gruntfile:\n\n```js\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n## Automatic behavior\nBy including `grunt.loadNpmTasks('grunt-notify');` in your `Gruntfile.js` you will automatically get notifications when Grunt has warnings or errors!\n\n[![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)]\n\n## Configuring the automatic behavior\nThese are the defaults. Any can be changed.\n\n```js\ngrunt.initConfig({\n  notify_hooks: {\n    options: {\n        warnHookEnabled:        true,\n        errorHookEnabled:       true,\n\n        warnHookDefaultTitle:   'Grunt Warning',\n        warnHookDefaultMessage: 'Warning!', // used if the warning from Grunt is not available\n\n        errorHookDefaultTitle:   'Grunt Error',\n        errorHookDefaultMessage: 'Error!' // used if the error from Grunt is not available\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// Always run it anytime you use `grunt` it uses your `notify_hooks` options.\ngrunt.task.run('notify_hooks');\n```\n\n[![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)]\n\n## Arbitrary figuring Notification Messages\n\n### notify Muti-task\nLets say you want a notification `watch` detects a change or when uploading to `s3` is complete. That's very easy to do:\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n        subtitle: '' // optional, kinda a lot for a message\n      }\n    },\n    helloWorld: {\n      options: {\n        message: 'Hello world!'\n      }\n    }\n  },\n});\n\ngrunt.loadNpmTasks('grunt-notify');\ngrunt.registerTask('default', 'notify:helloWorld');\n```\n\n[![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)]\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n* `subtitle` (_optional_): Subtitle, I think it's a bit much.\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nTo use the native notification system OSX requires packages to be signed and compiled using their platform and tools. This is not very friendly for Node users so we are using the tiny signed native application [Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy). We're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.\n\n## Growl, Windows, etc\nWish there was fallback support for Growl and other systems? Post a pull request with updated docs and tests and I'll be happy to update it.\n\n## Doodle or Die\nThis project was created for and is used by [Doodle or Die](http://doodleOrDie.com). \n\n[![Doodle or Die example](https://github.com/dylang/grunt-notify/raw/master/screenshots/deploy.png)](http://doodleOrDie.com)\n\n## Release History\nDec 28 - First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.1.2",
+            "dist": {
+                "shasum": "e052b34eaa5f7242eb09e8ce08ec54cba74de04e",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.1.2.tgz"
+            },
+            "_npmVersion": "1.1.70",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.1.3": {
+            "name": "grunt-notify",
+            "description": "Automatic OS X Native Notifications when Grunt tasks fail",
+            "version": "0.1.3",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.1.0",
+                "grunt-contrib-clean": "~0.4.0a",
+                "grunt-contrib-nodeunit": "~0.1.0",
+                "grunt": "~0.4.0rc4"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "osx", "os x"],
+            "readme": "# grunt-notify\n\n> Automatic OSX Native Notifications when Grunt tasks fail.\n\nThis requires `Grunt 0.4`. It also requires `OSX 10.8.2` (Mountain Lion) but it won't cause errors in older OSX versions or other platforms. \n\n## Getting Started\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's Gruntfile:\n\n```js\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n## Automatic behavior\nBy including `grunt.loadNpmTasks('grunt-notify');` in your `Gruntfile.js` you will automatically get notifications when Grunt has warnings or errors!\n\n```js\ngrunt.initConfig({\n  // no special task config is necessary!\n});\n\n// This is all you need\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n[![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n## Configuring the automatic behavior\nIf you want to make changes, such as change the title of the Notification or disable it, you can do so by configuring a `notify_hooks` task. *This is 100% optional*.\nTo make Grunt always run your config changes add `grunt.task.run('notify_hooks');` to your `Gruntfile`.\n\n```js\ngrunt.initConfig({\n  notify_hooks: {\n    options: {\n        //These are the defaults. Including them in this config is optional.\n        warnHookEnabled:        true,\n        errorHookEnabled:       true,\n\n        warnHookDefaultTitle:   'Grunt Warning',\n        warnHookDefaultMessage: 'Warning!', // used if the warning from Grunt is not available\n\n        errorHookDefaultTitle:   'Grunt Error',\n        errorHookDefaultMessage: 'Error!' // used if the error from Grunt is not available\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// Always run it anytime you use `grunt` it uses your `notify_hooks` options.\ngrunt.task.run('notify_hooks');\n```\n\n[![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)](https://github.com/dylang/grunt-notify)\n\n## Show Notification Messages when you want to\n\n### The notify MutiTask\nShow a message whenever you want!\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n        subtitle: '' // optional, kinda a lot for a message\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', ['uglify', 'sass', 'server', 'notify:server']);\n```\n\n[![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)](https://github.com/dylang/grunt-notify)\n\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n* `subtitle` (_optional_): Subtitle, I think it's a bit much.\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nTo use the native notification system OSX requires packages to be signed and compiled using their platform and tools. This is not very friendly for Node users so we are using the tiny signed native application [Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy). We're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.\n\n## Growl, Windows, etc\nWish there was fallback support for Growl and other systems? Post a pull request with updated docs and tests and I'll be happy to update it.\n\n## Doodle or Die\nThis project was created for and is used by [Doodle or Die](http://doodleOrDie.com). \n\n[![Doodle or Die example](https://github.com/dylang/grunt-notify/raw/master/screenshots/deploy.png)](http://doodleOrDie.com)\n\n## Release History\nDec 28 - First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.1.3",
+            "dist": {
+                "shasum": "4ef992734270916d2449eaa79ff237f78e4f9931",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.1.3.tgz"
+            },
+            "_npmVersion": "1.1.70",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.1.4": {
+            "name": "grunt-notify",
+            "description": "Automatic native notifications in OSX and Linux when tasks fail.",
+            "version": "0.1.4",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.1.1",
+                "grunt-contrib-clean": "~0.4.0",
+                "grunt-contrib-nodeunit": "~0.1.2",
+                "grunt": "~0.4.0"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.0"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "osx", "os x", "linux", "notify-send"],
+            "dependencies": {
+                "stack-parser": "0.0.1"
+            },
+            "readme": "# grunt-notify\n\n> Automatic native notifications in OSX and Linux when tasks fail.\n\n\n## Getting Started\nThis plugin requires Grunt `0.4`\n\nIt also requires `OS X 10.8.2` (Mountain Lion) or Linux using `notify-send` but it won't cause errors in older OS X versions or other platforms.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n  notify_hooks: {\n    options: {\n      //These are the defaults. Including them in this config is optional.\n      enabled:        true,\n      title:          process.cwd() // defaults to your project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This will load your configuration changes.\ngrunt.task.run('notify_hooks');\n```\n\n[![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)](https://github.com/dylang/grunt-notify)\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', ['uglify', 'sass', 'server', 'notify:server']);\n```\n\n[![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)](https://github.com/dylang/grunt-notify)\n\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n* `subtitle` (_optional_): Subtitle, I think it's a bit much.\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nTo use the native notification system OSX requires packages to be signed and compiled using their platform and tools.\nThis is not very friendly for Node users so we are using the tiny signed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nWe're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.\n\n## Growl, Windows, etc\nWish there was fallback support for Growl and other systems? Post a pull request with updated docs and tests and I'll be happy to update it.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com).\n\n[![Doodle or Die example](https://github.com/dylang/grunt-notify/raw/master/screenshots/deploy.png)](http://doodleOrDie.com)\n\n## Release History\nFeb 19 - Added Linux support thanks to @johnmccalla, listen for fatal errors, simplified options.\nDec 28 - First version.\n\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.1.4",
+            "dist": {
+                "shasum": "409cba130c2ca57134301860fa666bfb923b26c4",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.1.4.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.2.11",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.0": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.0",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.3.0",
+                "grunt-contrib-clean": "~0.4.0",
+                "grunt-contrib-nodeunit": "~0.1.2",
+                "grunt": "~0.4.1",
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~1.1.4",
+                "growl": "~1.7.0"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {},
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.\n\n[![JSHint Example](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)\n[![JSHint Example](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)\n[![JSHint Example](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)\n\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notify with Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is completely optional.\n  notify_hooks: {\n    options: {\n      enabled: true,\n      title: \"Project Name\" // defaults to your project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', ['uglify', 'sass', 'server', 'notify:server']);\n```\n\n[![Watch example](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)\n[![Watch example](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)\n\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nTo use the native notification system OSX requires packages to be signed and compiled using their platform and tools.\nThis is not very friendly for Node users so we are using the tiny signed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nWe're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n\n## Release History\n\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline (\\n).\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to @johnmccalla\n * listen for fatal errors\n * simplified options\n * default title is project title\n * show file name and line number if available\n* 28 Dec 2013 - 0.1.0-0.1.3\n * First version\n\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.0",
+            "dist": {
+                "shasum": "a8c82a2e9c7651333bc24ff4d47a4f167a2513a4",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.0.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.2.16",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.1": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.1",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.3.0",
+                "grunt-contrib-clean": "~0.4.0",
+                "grunt-contrib-nodeunit": "~0.1.2",
+                "grunt": "~0.4.1"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~1.1.4",
+                "growl": "~1.7.0"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.\n\n[![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notification Center: JSHint](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Grow: JSHint](screenshots/growl-jshint-lots.png)](https://github.com/dylang/grunt-notify)\n\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      title: \"Project Name\" // defaults to your project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n[![Growl: Custom Text](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: Custom Text](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline (\\n).\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to @johnmccalla\n * listen for fatal errors\n * simplified options\n * default title is project title\n * show file name and line number if available\n* 28 Dec 2013 - 0.1.0-0.1.3\n * First version",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.1",
+            "dist": {
+                "shasum": "d633ceefe2459fd1309f49b246c8339fd1e90b37",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.1.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.2.16",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.2": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.2",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.3.0",
+                "grunt-contrib-clean": "~0.4.0",
+                "grunt-contrib-nodeunit": "~0.1.2",
+                "grunt": "~0.4.1"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~1.1.4",
+                "growl": "~1.7.0"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.\n\n[![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notification Center: JSHint](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Grow: JSHint](screenshots/growl-jshint-lots.png)](https://github.com/dylang/grunt-notify)\n\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      title: \"Project Name\" // defaults to your project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n[![Growl: Custom Text](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: Custom Text](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to @jcoffin.\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline (\\n).\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to @johnmccalla.\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2013 - 0.1.0-0.1.3\n * First version",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.2",
+            "dist": {
+                "shasum": "7dda62c5e50d86c849d50a6a59aaf82e3c89c33d",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.2.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.2.16",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.3": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.3",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.3.0",
+                "grunt-contrib-clean": "~0.4.0",
+                "grunt-contrib-nodeunit": "~0.1.2",
+                "grunt": "~0.4.1"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~1.1.4",
+                "growl": "~1.7.0"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.\n\n[![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notification Center: JSHint](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Grow: JSHint](screenshots/growl-jshint-lots.png)](https://github.com/dylang/grunt-notify)\n\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      title: \"Project Name\" // defaults to your project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n[![Growl: Custom Text](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: Custom Text](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n* 4 Apr 2013 - 0.2.3\n * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline `\\n`.\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2013 - 0.1.0-0.1.3\n * First version",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.3",
+            "dist": {
+                "shasum": "fa16eeadd290523d370550144aea7fb979de5915",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.3.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.2.16",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.4": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.4",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.5.4",
+                "grunt-contrib-clean": "~0.4.0",
+                "grunt-contrib-nodeunit": "~0.2.0",
+                "grunt": "~0.4.1",
+                "grunt-contrib-watch": "~0.4.4"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~1.1.4"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.\n\n[![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notification Center: JSHint](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Grow: JSHint](screenshots/growl-jshint-lots.png)](https://github.com/dylang/grunt-notify)\n\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n[![Growl: Custom Text](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: Custom Text](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n* 30 May 2013 - 2.3.4\n * Make notications more reliable. They should show up now even if Grunt exists from an error.\n * Fix problems with `\\n` in a windows path becoming a new line, like `c:\\new`.\n * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.\n* 4 Apr 2013 - 0.2.3\n * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline `\\n`.\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2013 - 0.1.0-0.1.3\n * First version",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.4",
+            "dist": {
+                "shasum": "00ba97043477fb7d1e5c3dbdbca73c80237fb26e",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.4.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.2.14",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.5": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.5",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.5.4",
+                "grunt-contrib-nodeunit": "~0.2.0",
+                "grunt-contrib-watch": "~0.4.4"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~1.1.4"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, or Notify-Send.\n\n\n#### Growl for Mac and Windows\n[![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n#### OS X Notifcation Center\n[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)\n\n#### Snarl for Windows\n[![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n#### Notify-Send for Linux\nScreenshot on loan. Can someone donate a new one?\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notification Center: JSHint](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Grow: JSHint](screenshots/growl-jshint-lots.png)](https://github.com/dylang/grunt-notify)\n\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n[![Growl: Custom Text](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: Custom Text](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n* 26 July 2013 - 0.2.5\n * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).\n* 30 May 2013 - 0.2.4\n * Make notications more reliable. They should show up now even if Grunt exists from an error.\n * Fix problems with `\\n` in a windows path becoming a new line, like `c:\\new`.\n * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.\n* 4 Apr 2013 - 0.2.3\n * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline `\\n`.\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2012 - 0.1.0-0.1.3\n * First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.5",
+            "dist": {
+                "shasum": "cf207c55b5e26de5e69dd163ff7ea59a001b97b4",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.5.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.3.4",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.6": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.6",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.5.4",
+                "grunt-contrib-nodeunit": "~0.2.0",
+                "grunt-contrib-watch": "~0.4.4"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~1.1.4"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, or Notify-Send.\n\n\n#### Growl for Mac and Windows\n[![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n#### OS X Notifcation Center\n[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)\n\n#### Snarl for Windows\n[![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n#### Notify-Send for Linux\nScreenshot on loan. Can someone donate a new one?\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notification Center: JSHint](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Grow: JSHint](screenshots/growl-jshint-lots.png)](https://github.com/dylang/grunt-notify)\n\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n[![Growl: Custom Text](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: Custom Text](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n* 26 July 2013 - 0.2.5\n * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).\n* 30 May 2013 - 0.2.4\n * Make notications more reliable. They should show up now even if Grunt exists from an error.\n * Fix problems with `\\n` in a windows path becoming a new line, like `c:\\new`.\n * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.\n* 4 Apr 2013 - 0.2.3\n * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline `\\n`.\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2012 - 0.1.0-0.1.3\n * First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.6",
+            "dist": {
+                "shasum": "921bc6d30b2c970b70f85d0598b7dadf8421127b",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.6.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.3.6",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.7": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.7",
+            "homepage": "https://github.com/dgreene/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.5.4",
+                "grunt-contrib-nodeunit": "~0.2.0",
+                "grunt-contrib-watch": "~0.4.4"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~1.1.4"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, or Notify-Send.\n\n\n#### Growl for Mac and Windows\n[![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n#### OS X Notifcation Center\n[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)\n\n#### Snarl for Windows\n[![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n#### Notify-Send for Linux\nScreenshot on loan. Can someone donate a new one?\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notification Center: JSHint](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Grow: JSHint](screenshots/growl-jshint-lots.png)](https://github.com/dylang/grunt-notify)\n\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n[![Growl: Custom Text](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: Custom Text](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n* 29 July 2013 - 0.2.7\n * Fixed bug that could prevent Growl from working.\n* 26 July 2013 - 0.2.5\n * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).\n* 30 May 2013 - 0.2.4\n * Make notications more reliable. They should show up now even if Grunt exists from an error.\n * Fix problems with `\\n` in a windows path becoming a new line, like `c:\\new`.\n * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.\n* 4 Apr 2013 - 0.2.3\n * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline `\\n`.\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2012 - 0.1.0-0.1.3\n * First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.7",
+            "dist": {
+                "shasum": "f36a15dc7283b77c06f47874d8addceee0da4933",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.7.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.3.6",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.8": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.8",
+            "homepage": "https://github.com/dylang/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.6.2",
+                "grunt-contrib-watch": "~0.5.1",
+                "grunt-cafe-mocha": "~0.1.8",
+                "chai": "~1.7.2"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~2.1.0"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, or Notify-Send.\n\n\n#### Growl for Mac and Windows\n[![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n#### OS X Notifcation Center\n[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)\n\n#### Snarl for Windows\n[![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)\n\n#### Notify-Send for Linux\n[![Notify-Send: JSHint](screenshots/notify-send-jshint.png)](https://github.com/dylang/grunt-notify)\n\n_Notifications are as they appear in Arch Linux using XFCE and the default notification theme._\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n[![Notification Center: JSHint](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)\n[![Grow: JSHint](screenshots/growl-jshint-lots.png)](https://github.com/dylang/grunt-notify)\n\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n[![Growl: Custom Text](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)\n[![Notification Center: Custom Text](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n* 17 August 2013 - 0.2.8\n * Fixed bug caused Grunt-Notify to not work in 32-bit windows.\n * Fixed bug that prevented Snarl from working if the task ended quickly from an error.\n * Removed defaults for how many notifications and how long notifications say on the screen for Snarl.\n * Replaced Nodeunit tests with Mocha tests.\n* 29 July 2013 - 0.2.7\n * Fixed bug that could prevent Growl from working.\n* 26 July 2013 - 0.2.5\n * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).\n* 30 May 2013 - 0.2.4\n * Make notications more reliable. They should show up now even if Grunt exists from an error.\n * Fix problems with `\\n` in a windows path becoming a new line, like `c:\\new`.\n * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.\n* 4 Apr 2013 - 0.2.3\n * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline `\\n`.\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2012 - 0.1.0-0.1.3\n * First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.8",
+            "dist": {
+                "shasum": "421aa95cc9fba996f93960d73111365f4fe56199",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.8.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.3.8",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.9": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.9",
+            "homepage": "https://github.com/dylang/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.6.2",
+                "grunt-contrib-watch": "~0.5.1",
+                "grunt-cafe-mocha": "~0.1.8",
+                "chai": "~1.7.2"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~2.1.0"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, or Notify-Send.\n\n\n#### Growl for Mac and Windows\n![growl-jshint](https://f.cloud.github.com/assets/51505/982676/43c372da-0814-11e3-89e5-0cb0f45f50e1.png)\n![growl-nodeunit](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png)\n\n#### OS X Notifcation Center\n![notification-center-jshint](https://f.cloud.github.com/assets/51505/982681/4e63bf88-0814-11e3-8b57-e2f5f4c2e1c1.png)\n\n#### Snarl for Windows\n![snarl-nodeunit](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png)\n\n#### Notify-Send for Linux\n![notify-send-jshint](https://f.cloud.github.com/assets/51505/982684/52c579ea-0814-11e3-81ff-4879e56b4c41.png)\n\n_Notifications are as they appear in Arch Linux using XFCE and the default notification theme._\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n![notification-center-sidebar-jshint](https://f.cloud.github.com/assets/51505/982683/519b3bc2-0814-11e3-9b2b-1b07b4cf0466.png)\n![growl-jshint-lots](https://f.cloud.github.com/assets/51505/982677/46fff5f4-0814-11e3-9a21-156f80a65cbc.png)\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n![growl-deploy](https://f.cloud.github.com/assets/51505/982678/48b6fa82-0814-11e3-890e-82518408084a.png)\n![notification-center-deploy](https://f.cloud.github.com/assets/51505/982680/4b9df1ba-0814-11e3-88a4-0736f22dedf6.png)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Notifications aren't showing\nRun `grunt --debug` to show `grunt-notify` debug messages.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n* 18 August 2013 - 0.2.9\n * Add debug output. Use `--debug` to see it.\n* 17 August 2013 - 0.2.8\n * Fixed bug caused Grunt-Notify to not work in 32-bit windows.\n * Fixed bug that prevented Snarl from working if the task ended quickly from an error.\n * Removed defaults for how many notifications and how long notifications say on the screen for Snarl.\n * Replaced Nodeunit tests with Mocha tests.\n* 29 July 2013 - 0.2.7\n * Fixed bug that could prevent Growl from working.\n* 26 July 2013 - 0.2.5\n * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).\n* 30 May 2013 - 0.2.4\n * Make notications more reliable. They should show up now even if Grunt exists from an error.\n * Fix problems with `\\n` in a windows path becoming a new line, like `c:\\new`.\n * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.\n* 4 Apr 2013 - 0.2.3\n * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline `\\n`.\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2012 - 0.1.0-0.1.3\n * First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.9",
+            "dist": {
+                "shasum": "49d07c1003c842d3a9afd14c70033a5b2d3dff7c",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.9.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.3.8",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.10": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.10",
+            "homepage": "https://github.com/dylang/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.6.2",
+                "grunt-contrib-watch": "~0.5.1",
+                "grunt-cafe-mocha": "~0.1.8",
+                "chai": "~1.7.2"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~2.1.0"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, or Notify-Send.\n\n\n#### Growl for Mac and Windows\n![growl-jshint](https://f.cloud.github.com/assets/51505/982676/43c372da-0814-11e3-89e5-0cb0f45f50e1.png)\n![growl-nodeunit](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png)\n\n#### OS X Notifcation Center\n![notification-center-jshint](https://f.cloud.github.com/assets/51505/982681/4e63bf88-0814-11e3-8b57-e2f5f4c2e1c1.png)\n\n#### Snarl for Windows\n![snarl-nodeunit](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png)\n\n#### Notify-Send for Linux\n![notify-send-jshint](https://f.cloud.github.com/assets/51505/982684/52c579ea-0814-11e3-81ff-4879e56b4c41.png)\n\n_Notifications are as they appear in Arch Linux using XFCE and the default notification theme._\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n![notification-center-sidebar-jshint](https://f.cloud.github.com/assets/51505/982683/519b3bc2-0814-11e3-9b2b-1b07b4cf0466.png)\n![growl-jshint-lots](https://f.cloud.github.com/assets/51505/982677/46fff5f4-0814-11e3-9a21-156f80a65cbc.png)\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n![growl-deploy](https://f.cloud.github.com/assets/51505/982678/48b6fa82-0814-11e3-890e-82518408084a.png)\n![notification-center-deploy](https://f.cloud.github.com/assets/51505/982680/4b9df1ba-0814-11e3-88a4-0736f22dedf6.png)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Notifications aren't showing\nRun `grunt --debug` to show `grunt-notify` debug messages.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n* 18 August 2013 - 0.2.10\n * Added more information to the `--debug` output.\n* 18 August 2013 - 0.2.9\n * Add debug output. Use `--debug` to see it.\n* 17 August 2013 - 0.2.8\n * Fixed bug caused Grunt-Notify to not work in 32-bit windows.\n * Fixed bug that prevented Snarl from working if the task ended quickly from an error.\n * Removed defaults for how many notifications and how long notifications say on the screen for Snarl.\n * Replaced Nodeunit tests with Mocha tests.\n* 29 July 2013 - 0.2.7\n * Fixed bug that could prevent Growl from working.\n* 26 July 2013 - 0.2.5\n * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).\n* 30 May 2013 - 0.2.4\n * Make notications more reliable. They should show up now even if Grunt exists from an error.\n * Fix problems with `\\n` in a windows path becoming a new line, like `c:\\new`.\n * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.\n* 4 Apr 2013 - 0.2.3\n * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline `\\n`.\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2012 - 0.1.0-0.1.3\n * First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.10",
+            "dist": {
+                "shasum": "01bf07ef912514752462e92d38449ec0ba0cfecf",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.10.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.3.8",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.11": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.11",
+            "homepage": "https://github.com/dylang/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.6.2",
+                "grunt-contrib-watch": "~0.5.1",
+                "grunt-cafe-mocha": "~0.1.8",
+                "chai": "~1.7.2"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~2.1.0"
+            },
+            "readme": "# grunt-notify\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, or Notify-Send.\n\n\n#### Growl for Mac and Windows\n![growl-jshint](https://f.cloud.github.com/assets/51505/982676/43c372da-0814-11e3-89e5-0cb0f45f50e1.png)\n![growl-nodeunit](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png)\n\n#### OS X Notifcation Center\n![notification-center-jshint](https://f.cloud.github.com/assets/51505/982681/4e63bf88-0814-11e3-8b57-e2f5f4c2e1c1.png)\n\n#### Snarl for Windows\n![snarl-nodeunit](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png)\n\n#### Notify-Send for Linux\n![notify-send-jshint](https://f.cloud.github.com/assets/51505/982684/52c579ea-0814-11e3-81ff-4879e56b4c41.png)\n\n_Notifications are as they appear in Arch Linux using XFCE and the default notification theme._\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n![notification-center-sidebar-jshint](https://f.cloud.github.com/assets/51505/982683/519b3bc2-0814-11e3-9b2b-1b07b4cf0466.png)\n![growl-jshint-lots](https://f.cloud.github.com/assets/51505/982677/46fff5f4-0814-11e3-9a21-156f80a65cbc.png)\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n![growl-deploy](https://f.cloud.github.com/assets/51505/982678/48b6fa82-0814-11e3-890e-82518408084a.png)\n![notification-center-deploy](https://f.cloud.github.com/assets/51505/982680/4b9df1ba-0814-11e3-88a4-0736f22dedf6.png)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Notifications aren't showing\nRun `grunt --debug` to show `grunt-notify` debug messages.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n* 18 August 2013 - 0.2.11\n * Added another directory Snarl could be installed to.\n* 18 August 2013 - 0.2.10\n * Added more information to the `--debug` output.\n* 18 August 2013 - 0.2.9\n * Add debug output. Use `--debug` to see it.\n* 17 August 2013 - 0.2.8\n * Fixed bug caused Grunt-Notify to not work in 32-bit windows.\n * Fixed bug that prevented Snarl from working if the task ended quickly from an error.\n * Removed defaults for how many notifications and how long notifications say on the screen for Snarl.\n * Replaced Nodeunit tests with Mocha tests.\n* 29 July 2013 - 0.2.7\n * Fixed bug that could prevent Growl from working.\n* 26 July 2013 - 0.2.5\n * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).\n* 30 May 2013 - 0.2.4\n * Make notications more reliable. They should show up now even if Grunt exists from an error.\n * Fix problems with `\\n` in a windows path becoming a new line, like `c:\\new`.\n * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.\n* 4 Apr 2013 - 0.2.3\n * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).\n* 1 Apr 2013 - 0.2.2\n * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).\n* 1 Apr 2013 - 0.2.1\n * Fix dependencies.\n* 31 Mar 2013 - 0.2.0\n * Complete rewrite.\n * New support for Grunt in Windows.\n * Now parses JSLint errors to show them in notification.\n * Notification title will automatically use package.json name field or directory name.\n * No more subtitle option.\n * Title now includes the task that was running.\n * Better command line escaping including support for newline `\\n`.\n* 17 Mar 2013 - 0.1.6\n * Code refactor to clean things up\n* 19 Feb 2013 - 0.1.4\n * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).\n * Listen for fatal errors.\n * Simplified options.\n * Default title is project title.\n * Show file name and line number if available.\n* 28 Dec 2012 - 0.1.0-0.1.3\n * First version\n",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.11",
+            "dist": {
+                "shasum": "4f57ae92b7b252dabda9a0987e001407a7abb115",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.11.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.3.8",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.12": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.12",
+            "homepage": "https://github.com/dylang/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.6.2",
+                "grunt-contrib-watch": "~0.5.1",
+                "grunt-cafe-mocha": "~0.1.8",
+                "chai": "~1.7.2",
+                "proxyquire": "~0.5.1"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~2.1.0"
+            },
+            "readme": "# grunt-notify [![Build Status](https://travis-ci.org/dylang/grunt-notify.png?branch=master)](https://travis-ci.org/dylang/grunt-notify)\n\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, and Notify-Send.\n\n\n#### Growl for Mac and Windows\n![growl-jshint](https://f.cloud.github.com/assets/51505/982676/43c372da-0814-11e3-89e5-0cb0f45f50e1.png)\n![growl-nodeunit](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png)\n\n#### OS X Notifcation Center\n![notification-center-jshint](https://f.cloud.github.com/assets/51505/982681/4e63bf88-0814-11e3-8b57-e2f5f4c2e1c1.png)\n\n#### Snarl for Windows\n![snarl-nodeunit](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png)\n\n#### Notify-Send for Linux\n![notify-send-jshint](https://f.cloud.github.com/assets/51505/982684/52c579ea-0814-11e3-81ff-4879e56b4c41.png)\n\n_Notifications are as they appear in Arch Linux using XFCE and the default notification theme._\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n![notification-center-sidebar-jshint](https://f.cloud.github.com/assets/51505/982683/519b3bc2-0814-11e3-9b2b-1b07b4cf0466.png)\n![growl-jshint-lots](https://f.cloud.github.com/assets/51505/982677/46fff5f4-0814-11e3-9a21-156f80a65cbc.png)\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n![growl-deploy](https://f.cloud.github.com/assets/51505/982678/48b6fa82-0814-11e3-890e-82518408084a.png)\n![notification-center-deploy](https://f.cloud.github.com/assets/51505/982680/4b9df1ba-0814-11e3-88a4-0736f22dedf6.png)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` _optional_ Notification title\n* `message` _required_ Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Notifications aren't showing\nRun `grunt --debug` to show `grunt-notify` debug messages. Create an issue and I'll look into it asap.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifier](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n\nSee [CHANGELOG.md](CHANGELOG.md) for changes.\n\n## License\n\n[LICENSE-MIT](MIT)",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.12",
+            "dist": {
+                "shasum": "c6d25e1448969bc85c695e4f96b3472d3e6056aa",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.12.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.3.9",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        },
+        "0.2.13": {
+            "name": "grunt-notify",
+            "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
+            "version": "0.2.13",
+            "homepage": "https://github.com/dylang/grunt-notify",
+            "author": {
+                "name": "Dylan Greene",
+                "email": "dylang@gmail.com"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/dylang/grunt-notify.git"
+            },
+            "bugs": {
+                "url": "https://github.com/dylang/grunt-notify/issues"
+            },
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
+                }
+            ],
+            "main": "Gruntfile.js",
+            "engines": {
+                "node": ">= 0.8.0"
+            },
+            "scripts": {
+                "test": "grunt test"
+            },
+            "devDependencies": {
+                "grunt-contrib-jshint": "~0.6.2",
+                "grunt-contrib-watch": "~0.5.1",
+                "grunt-cafe-mocha": "~0.1.8",
+                "chai": "~1.7.2",
+                "proxyquire": "~0.5.1"
+            },
+            "peerDependencies": {
+                "grunt": "~0.4.1"
+            },
+            "keywords": ["gruntplugin", "notification", "notify", "growl", "mountain lion", "linux", "notify-send", "error", "warning", "automatic"],
+            "dependencies": {
+                "stack-parser": "~0.0.1",
+                "which": "~1.0.5",
+                "semver": "~2.1.0"
+            },
+            "readme": "# grunt-notify [![Build Status](https://travis-ci.org/dylang/grunt-notify.png?branch=master)](https://travis-ci.org/dylang/grunt-notify)\n\n\n> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, and Notify-Send.\n\n\n#### Growl for Mac and Windows\n![growl-jshint](https://f.cloud.github.com/assets/51505/982676/43c372da-0814-11e3-89e5-0cb0f45f50e1.png)\n![growl-nodeunit](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png)\n\n#### OS X Notifcation Center\n![notification-center-jshint](https://f.cloud.github.com/assets/51505/982681/4e63bf88-0814-11e3-8b57-e2f5f4c2e1c1.png)\n\n#### Snarl for Windows\n![snarl-nodeunit](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png)\n\n#### Notify-Send for Linux\n![notify-send - jshint](https://f.cloud.github.com/assets/51505/1030946/056631f4-0ecb-11e3-97cb-46e12c484f8b.png)\n\n\n## Getting Started\n\nThis plugin recommends Grunt `0.4.1` or newer.\n\n## Installing\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's `Gruntfile.js`:\n\n```js\n// Automatic notifications when tasks fail.\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n**That's all you need for automatic notifications.**\n\n![notification-center-sidebar-jshint](https://f.cloud.github.com/assets/51505/982683/519b3bc2-0814-11e3-9b2b-1b07b4cf0466.png)\n![growl-jshint-lots](https://f.cloud.github.com/assets/51505/982677/46fff5f4-0814-11e3-9a21-156f80a65cbc.png)\n\n## Notify_Hooks Options\n\nIf you want change the automatic messaging configure a task called `notify_hooks`.\n\n```js\ngrunt.initConfig({\n // This is optional!\n  notify_hooks: {\n    options: {\n      enabled: true,\n      max_jshint_notifications: 5, // maximum number of notifications from jshint output\n      title: \"Project Name\" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// This is required if you use any options.\ngrunt.task.run('notify_hooks');\n```\n\n## Showing Specfic Notifications\n\nSometimes you want to show messages like \"Uglify complete\" or \"Project Deployed\" - that's easy to do too.\n\n![growl-deploy](https://f.cloud.github.com/assets/51505/982678/48b6fa82-0814-11e3-890e-82518408084a.png)\n![notification-center-deploy](https://f.cloud.github.com/assets/51505/982680/4b9df1ba-0814-11e3-88a4-0736f22dedf6.png)\n![notify-send custom](https://f.cloud.github.com/assets/51505/1030945/038e46dc-0ecb-11e3-9915-80c1838624a8.png)\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n      }\n    },\n    server: {\n      options: {\n        message: 'Server is ready!'\n      }\n    }\n  }\n});\n\ngrunt.loadNpmTasks('grunt-notify');\n\n// simplified example\ngrunt.registerTask('server', [\n  'uglify',\n  'sass',\n  'server',\n  'notify:server'\n  ]);\n```\n\n### Options\n* `title` _optional_ Notification title\n* `message` _required_ Notification message\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Notifications aren't showing\nRun `grunt --debug` to show `grunt-notify` debug messages. Create an issue and I'll look into it asap.\n\n## Terminal Notifier\nApple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.\nThis is not very friendly for Node users so we are using the tiny signed MIT-licensed native application\n[Terminal Notifier](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy).\nI've changed the default icon which is owned by Apple to the Grunt logo.\n\n## Doodle or Die\nThis project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!\n\n## Release History\n\nSee [CHANGELOG.md](CHANGELOG.md) for changes.\n\n## License\n\n[LICENSE-MIT](MIT)",
+            "readmeFilename": "README.md",
+            "_id": "grunt-notify@0.2.13",
+            "dist": {
+                "shasum": "bb9d89ada294efd0e5ccfaa8c053732fcce18f0c",
+                "tarball": "http://registry.npmjs.org/grunt-notify/-/grunt-notify-0.2.13.tgz"
+            },
+            "_from": ".",
+            "_npmVersion": "1.3.9",
+            "_npmUser": {
+                "name": "dylang",
+                "email": "dylang@gmail.com"
+            },
+            "maintainers": [
+                {
+                    "name": "dylang",
+                    "email": "dylang@gmail.com"
+                }
+            ],
+            "directories": {}
+        }
+    }, "readme": "# grunt-notify\n\n> Automatic OSX Native Notifications when Grunt tasks fail.\n\nThis requires `Grunt 0.4`. It also requires `OSX 10.8.2` (Mountain Lion) but it won't cause errors in older OSX versions or other platforms. \n\n## Getting Started\n\n```bash\nnpm install grunt-notify --save-dev\n```\n\nOnce that's done, add this line to your project's Gruntfile:\n\n```js\ngrunt.loadNpmTasks('grunt-notify');\n```\n\n## Automatic behavior\nBy including `grunt.loadNpmTasks('grunt-notify');` in your `Gruntfile.js` you will automatically get notifications when Grunt has warnings or errors!\n\n[![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)]\n\n## Configuring the automatic behavior\nThese are the defaults. Any can be changed.\n\n```js\ngrunt.initConfig({\n  notify_hooks: {\n    options: {\n        warnHookEnabled:        true,\n        errorHookEnabled:       true,\n\n        warnHookDefaultTitle:   'Grunt Warning',\n        warnHookDefaultMessage: 'Warning!', // used if the warning from Grunt is not available\n\n        errorHookDefaultTitle:   'Grunt Error',\n        errorHookDefaultMessage: 'Error!' // used if the error from Grunt is not available\n    }\n  }\n});\n\n// Load the task\ngrunt.loadNpmTasks('grunt-notify');\n\n// Always run it anytime you use `grunt` it uses your `notify_hooks` options.\ngrunt.task.run('notify_hooks');\n```\n\n[![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)]\n\n## Arbitrary figuring Notification Messages\n\n### notify Muti-task\nLets say you want a notification `watch` detects a change or when uploading to `s3` is complete. That's very easy to do:\n\n```js\ngrunt.initConfig({\n  notify: {\n    task_name: {\n      options: {\n        // Task-specific options go here.\n      }\n    },\n    watch: {\n      options: {\n        title: 'Task Complete',  // optional\n        message: 'SASS and Uglify finished running', //required\n        subtitle: '' // optional, kinda a lot for a message\n      }\n    },\n    helloWorld: {\n      options: {\n        message: 'Hello world!'\n      }\n    }\n  },\n});\n\ngrunt.loadNpmTasks('grunt-notify');\ngrunt.registerTask('default', 'notify:helloWorld');\n```\n[![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)]\n\n### Options\n* `title` (_optional_): Notification title\n* `message` (_required_): Notification message\n* `subtitle` (_optional_): Subtitle, I think it's a bit much.\n\n## Tests\nRun `grunt` to lint and run the tests.\n\n## Terminal Notifier\nTo use the native notification system OSX requires packages to be signed and compiled using their platform and tools. This is not very friendly for Node users so we are using the tiny signed native application [Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy DurÃ¡n](https://github.com/alloy). We're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.\n\n## Growl, Windows, etc\nWish there was fallback support for Growl and other systems? Post a pull request with updated docs and tests and I'll be happy to update it.\n\n## Doodle or Die\nThis project was created for and is used by [Doodle or Die](http://doodleOrDie.com). \n\n[![Doodle or Die example](https://github.com/dylang/grunt-notify/raw/master/screenshots/deploy.png)](http://doodleOrDie.com)\n\n## Release History\nDec 28 - First version\n", "maintainers": [
+    {
+        "name": "dylang",
+        "email": "dylang@gmail.com"
+    }
+], "time": {
+    "0.1.0": "2012-12-29T00:50:44.310Z",
+    "0.1.1": "2012-12-29T02:35:33.484Z",
+    "0.1.2": "2012-12-29T02:51:37.693Z",
+    "0.1.3": "2012-12-29T04:16:44.169Z",
+    "0.1.4": "2013-02-19T22:34:34.867Z",
+    "0.2.0": "2013-04-01T03:50:35.027Z",
+    "0.2.1": "2013-04-01T15:06:55.694Z",
+    "0.2.2": "2013-04-01T17:22:51.366Z",
+    "0.2.3": "2013-04-05T02:33:19.672Z",
+    "0.2.4": "2013-05-31T03:07:49.322Z",
+    "0.2.5": "2013-07-26T04:27:36.585Z",
+    "0.2.6": "2013-07-29T19:07:37.628Z",
+    "0.2.7": "2013-07-29T20:34:58.520Z",
+    "0.2.8": "2013-08-18T03:57:49.958Z",
+    "0.2.9": "2013-08-18T14:45:42.922Z",
+    "0.2.10": "2013-08-18T18:19:08.259Z",
+    "0.2.11": "2013-08-18T21:28:54.417Z",
+    "0.2.12": "2013-08-24T19:35:22.092Z",
+    "0.2.13": "2013-08-27T03:47:42.304Z"
+}, "author": {
+    "name": "Dylan Greene",
+    "email": "dylang@gmail.com"
+}, "repository": {
+    "type": "git",
+    "url": "git://github.com/dylang/grunt-notify.git"
+}, "users": {
+    "joeybaker": true,
+    "phoopee3": true
+}, "_attachments": {
+    "grunt-notify-0.2.13.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 40,
+        "digest": "md5-xi7U7bmcp4ZQdWNeW75crw==",
+        "length": 654028,
+        "stub": true
+    },
+    "grunt-notify-0.2.12.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 38,
+        "digest": "md5-9fc2Wr5V9zXT8doODT4ULA==",
+        "length": 654281,
+        "stub": true
+    },
+    "grunt-notify-0.2.11.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 36,
+        "digest": "md5-IVHEHPnAt/GdQD+V8mkVvg==",
+        "length": 652236,
+        "stub": true
+    },
+    "grunt-notify-0.2.10.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 34,
+        "digest": "md5-zeDD+x6a/Zn3eBt1Qg93Vw==",
+        "length": 652044,
+        "stub": true
+    },
+    "grunt-notify-0.2.9.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 32,
+        "digest": "md5-LBG+QtUTGTdKdBCQvvcruA==",
+        "length": 651363,
+        "stub": true
+    },
+    "grunt-notify-0.2.8.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 30,
+        "digest": "md5-wZoX/UFiE9myB9awe8WD0w==",
+        "length": 650390,
+        "stub": true
+    },
+    "grunt-notify-0.2.7.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 28,
+        "digest": "md5-W6l+gs02HQaRNxrRk+uT9Q==",
+        "length": 639655,
+        "stub": true
+    },
+    "grunt-notify-0.2.6.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 26,
+        "digest": "md5-uiRAjAUTNCt9rv0lnDSDPw==",
+        "length": 639873,
+        "stub": true
+    },
+    "grunt-notify-0.2.5.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 24,
+        "digest": "md5-PdOab5U4WSgHiCRmvs+L4A==",
+        "length": 639559,
+        "stub": true
+    },
+    "grunt-notify-0.2.4.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 22,
+        "digest": "md5-Ol3iO8w0ytdqrkoxaxpP/A==",
+        "length": 623379,
+        "stub": true
+    },
+    "grunt-notify-0.2.3.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 20,
+        "digest": "md5-8zC1Aemvko7wLyauK6dt2g==",
+        "length": 627644,
+        "stub": true
+    },
+    "grunt-notify-0.2.2.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 17,
+        "digest": "md5-8snudnlL/F0mPWrOe13hQw==",
+        "length": 626967,
+        "stub": true
+    },
+    "grunt-notify-0.2.1.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 15,
+        "digest": "md5-8SEYgICXUjQNsY+7mVyoDQ==",
+        "length": 626304,
+        "stub": true
+    },
+    "grunt-notify-0.2.0.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 13,
+        "digest": "md5-W+KF1JCTS8EZLNJIKqCmoQ==",
+        "length": 626220,
+        "stub": true
+    },
+    "grunt-notify-0.1.4.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 11,
+        "digest": "md5-iY5XDn9vbb5U4vAqo41w+w==",
+        "length": 351473,
+        "stub": true
+    },
+    "grunt-notify-0.1.3.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 9,
+        "digest": "md5-YaGiX8ihc3Gmj+G1ZNOrCw==",
+        "length": 350458,
+        "stub": true
+    },
+    "grunt-notify-0.1.2.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 7,
+        "digest": "md5-srGfdnbyXuXbvYOw2nHY9Q==",
+        "length": 350061,
+        "stub": true
+    },
+    "grunt-notify-0.1.1.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 5,
+        "digest": "md5-02LbXj/FaSXLPaey7r17ww==",
+        "length": 349858,
+        "stub": true
+    },
+    "grunt-notify-0.1.0.tgz": {
+        "content_type": "application/octet-stream",
+        "revpos": 3,
+        "digest": "md5-IGcpeuDleZ9gO73ccd8s1Q==",
+        "length": 349835,
+        "stub": true
+    }
+}}

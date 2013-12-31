@@ -1,0 +1,54 @@
+{
+  "name": "anthology",
+  "description": "Module information and stats for any @npmjs user",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dylang/anthology",
+  "author": {
+    "name": "Dylan Greene",
+    "email": "dylang@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dylang/anthology.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dylang/anthology/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/dylang/anthology/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/anthology",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "chai": "~1.8.0",
+    "proxyquire": "~0.5.1",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-notify": "~0.2.13",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-readme": "~0.4.0",
+    "time-grunt": "~0.2.3",
+    "grunt-mocha-test": "~0.8.1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "request": "~2.30.0",
+    "q": "~0.9.7",
+    "github-url-from-git": "~1.1.1",
+    "github": "~0.1.10",
+    "minimatch": "~0.2.12",
+    "asciitable": "0.0.7",
+    "optimist": "~0.6.0",
+    "npmconf": "~0.1.6",
+    "dashdash": "~1.4.0",
+    "text-table": "~0.2.0"
+  }
+}
