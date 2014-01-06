@@ -1,7 +1,7 @@
 {
   "name": "anthology",
   "description": "Module information and stats for any @npmjs user",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/dylang/anthology",
   "author": {
     "name": "Dylan Greene",
@@ -36,7 +36,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-readme": "~0.4.0",
     "time-grunt": "~0.2.3",
-    "grunt-mocha-test": "~0.8.1"
+    "grunt-mocha-test": "~0.8.1",
+    "load-grunt-tasks": "~0.2.1"
   },
   "keywords": [],
   "dependencies": {
