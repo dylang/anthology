@@ -1,7 +1,7 @@
 {
   "name": "anthology",
   "description": "Module information and stats for any @npmjs user",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/dylang/anthology",
   "author": {
     "name": "Dylan Greene",
