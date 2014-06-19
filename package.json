@@ -1,7 +1,7 @@
 {
   "name": "anthology",
   "description": "Module information and stats for any @npmjs user",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "https://github.com/dylang/anthology",
   "author": {
     "name": "Dylan Greene",
@@ -28,28 +28,26 @@
     "test": "grunt test"
   },
   "devDependencies": {
+    "chai": "^1.9.1",
     "grunt": "~0.4.1",
-    "chai": "~1.8.0",
-    "proxyquire": "~0.5.1",
-    "grunt-contrib-jshint": "~0.7.2",
-    "grunt-notify": "~0.2.13",
-    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-test": "^0.11.0",
+    "grunt-notify": "^0.3.0",
     "grunt-readme": "~0.4.0",
-    "time-grunt": "~0.2.3",
-    "grunt-mocha-test": "~0.8.1",
-    "load-grunt-tasks": "~0.2.1"
+    "load-grunt-tasks": "^0.5.0",
+    "proxyquire": "^1.0.1",
+    "time-grunt": "^0.3.2"
   },
   "keywords": [],
   "dependencies": {
-    "request": "~2.30.0",
-    "q": "~0.9.7",
-    "github-url-from-git": "~1.1.1",
-    "github": "~0.1.10",
-    "minimatch": "~0.2.12",
     "asciitable": "0.0.7",
+    "github": "^0.2.0",
+    "github-url-from-git": "~1.1.1",
+    "minimatch": "^0.3.0",
+    "npmconf": "^1.0.6",
     "optimist": "~0.6.0",
-    "npmconf": "~0.1.6",
-    "dashdash": "~1.4.0",
-    "text-table": "~0.2.0"
+    "q": "^1.0.1",
+    "request": "^2.36.0"
   }
 }
