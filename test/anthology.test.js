@@ -5,6 +5,9 @@ var Q = require('q');
 var proxyquire = require('proxyquire').noCallThru();
 var anthology = proxyquire('../lib/anthology.js', {
     './npm': {
+        versionsFromModuleName: function(module) {
+            return Q.resolve(0);
+        },
         githubRepoFromModuleName: function(module){
             var npmToGithubRepo = require('./fixtures/npm.moduleInfo.repo.json');
             return Q.resolve(npmToGithubRepo[module]);
