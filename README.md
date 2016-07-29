@@ -11,6 +11,23 @@ anthology.forUser(username, filter)  // returns promise
   .then(data);
 ```
 
+## CLI
+
+Install the module globally: `npm install -g anthology`. The CLI is
+available as `npm-anthology`.
+
+<!-- BEGIN-EVAL echo '```';node lib/cli.js -h;echo '```' -->
+```
+Usage: npm-anthology [--username USER] [repo...]
+
+Examples:
+
+    npm-anthology --username dylang anthology
+    npm-anthology --username dylang *
+```
+
+<!-- END-EVAL -->
+
 ## Documentation
 _(Coming soon)_
 
