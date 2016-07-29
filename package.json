@@ -24,6 +24,9 @@
   "engines": {
     "node": ">= 0.8.0"
   },
+  "bin": {
+      "npm-anthology": "./lib/cli.js"
+  },
   "scripts": {
     "test": "grunt test"
   },
@@ -46,7 +49,6 @@
     "github": "^0.2.0",
     "github-url-from-git": "^1.4.0",
     "minimatch": "^1.0.0",
-    "npmconf": "^2.1.0",
     "optimist": "^0.6.0",
     "q": "^1.0.1",
     "request": "^2.36.0"
